@@ -25,7 +25,7 @@ For a full run on real assessment data:
     -v /path/to/output:/root/results \
     andela-flex-pharm
 
-Put targets.json in the data folder. My finished run is in output/pharm-real/docked_poses.sdf.
+Put targets.json in the data folder before you run.
 
 Useful env vars:
   NUM_CONFS       conformers per ligand (default 100)
