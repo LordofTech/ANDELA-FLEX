@@ -7,9 +7,9 @@ Pharmacophore task
 
 Reads targets.json, docks each SMILES onto the interaction sites, writes one pose per target to docked_poses.sdf.
 
-Local (needs rdkit):
+Local (needs rdkit and numpy):
 
-  pip install -r requirements-pharm.txt
+  pip install rdkit numpy
   python -m tasks.geometric_pharmacophore.align -i sample_data/pharm/targets.json -o output/pharm/docked_poses.sdf
 
 Docker:
@@ -43,7 +43,7 @@ Optional phantom for local smoke tests:
 
   python sample_data/qsm/make_phantom.py
 
-  pip install -r requirements-qsm.txt
+  pip install numpy scipy nibabel scikit-image
   python -m tasks.qsm_recon.reconstruct --anat sample_data/qsm/sub-1/anat --out output/qsm/sub-1_MEGRE_Chimap.nii
 
 Or just: bash scripts/run_qsm.sh
@@ -53,7 +53,7 @@ Assessment output path: /app/data/derivatives/qsm/sub-1/anat/sub-1_MEGRE_Chimap.
 
 Tests
 
-  pip install -r requirements-pharm.txt -r requirements-qsm.txt -r requirements-dev.txt
+  pip install rdkit numpy scipy nibabel scikit-image pytest
   pytest
 
 
